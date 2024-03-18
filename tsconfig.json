@@ -5,6 +5,8 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": ".",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -18,8 +20,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@shadcn/ui":["./components/ui/index"],
+      "@model":["./src/model/index"]
+    }
   },
-  "include": ["src"],
+  "include": ["src","components","libs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
