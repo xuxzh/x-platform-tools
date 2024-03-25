@@ -22,8 +22,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@shadcn/ui":["./components/ui/index"],
-      "@model":["./src/model/index"]
+      "@/*": ["./*"]
     }
   },
   "include": ["src","components","libs"],

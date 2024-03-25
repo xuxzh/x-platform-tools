@@ -1,28 +1,31 @@
 // import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import { invoke } from "@tauri-apps/api/tauri";
+import { useState } from "react";
 import "./App.css";
 
-import { Button } from '@shadcn/ui';
-import { RhSafeAny } from "@model";
+import { Button } from "@/components/index";
+import { AlertDialogDemo } from "@/src/shared/alert-dialog-demo";
 
 function App() {
-  const a:RhSafeAny={};
-  async function greet(e:React.MouseEvent<HTMLButtonElement,MouseEvent>) {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    // const msg=await invoke("greet",( e.nativeEvent as any).pointerType);
-    alert(`hello :${JSON.stringify(a)}`);
-  }
+  // async function greet() {
+  //   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+  //   const info = "rust";
+  //   const msg = await invoke("greet", { info });
+  //   console.log(msg);
+  // }
+  const [open, setOpen] = useState(false);
 
-  function test(msg:string){
-    console.log(msg);
-    alert(msg)
-  }
+  const openChange = () => {
+    setOpen((open) => !open);
+  };
 
   return (
     <div className="container">
-      <Button onClick={e=>greet(e)} variant={'destructive'}>测试</Button>
-      <button onClick={()=>test('hello')}>测试</button>
+      <Button variant={"destructive"} onClick={openChange}>
+        测试
+      </Button>
+      <AlertDialogDemo open={open} openChange={openChange}></AlertDialogDemo>
     </div>
   );
 }
