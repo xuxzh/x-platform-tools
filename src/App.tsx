@@ -1,11 +1,12 @@
 // import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import { invoke } from "@tauri-apps/api/tauri";
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
+import MonacoEditor from "./shared/monaco-editor";
 
-import { Button } from "@/components/index";
-import { AlertDialogDemo } from "@/src/shared/alert-dialog-demo";
+// import { Button } from "@/components/index";
+// import { AlertDialogDemo } from "@/src/shared/alert-dialog-demo";
 
 function App() {
   // async function greet() {
@@ -14,18 +15,19 @@ function App() {
   //   const msg = await invoke("greet", { info });
   //   console.log(msg);
   // }
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const openChange = () => {
-    setOpen((open) => !open);
-  };
+  // const openChange = () => {
+  //   setOpen((open) => !open);
+  // };
 
   return (
-    <div className="container">
-      <Button variant={"destructive"} onClick={openChange}>
+    <div className="size-full">
+      {/* <Button variant={"destructive"} onClick={openChange}>
         测试
       </Button>
-      <AlertDialogDemo open={open} openChange={openChange}></AlertDialogDemo>
+      <AlertDialogDemo open={open} openChange={openChange}></AlertDialogDemo> */}
+      <MonacoEditor></MonacoEditor>
     </div>
   );
 }
